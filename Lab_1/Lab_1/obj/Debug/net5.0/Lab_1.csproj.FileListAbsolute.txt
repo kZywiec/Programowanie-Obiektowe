@@ -1,0 +1,16 @@
+C:\Users\Krystian\Source\Repos\kZywiec\Programowanie-Obiektowe\Lab_1\Lab_1\bin\Debug\net5.0\Lab_1.exe
+C:\Users\Krystian\Source\Repos\kZywiec\Programowanie-Obiektowe\Lab_1\Lab_1\bin\Debug\net5.0\Lab_1.deps.json
+C:\Users\Krystian\Source\Repos\kZywiec\Programowanie-Obiektowe\Lab_1\Lab_1\bin\Debug\net5.0\Lab_1.runtimeconfig.json
+C:\Users\Krystian\Source\Repos\kZywiec\Programowanie-Obiektowe\Lab_1\Lab_1\bin\Debug\net5.0\Lab_1.runtimeconfig.dev.json
+C:\Users\Krystian\Source\Repos\kZywiec\Programowanie-Obiektowe\Lab_1\Lab_1\bin\Debug\net5.0\Lab_1.dll
+C:\Users\Krystian\Source\Repos\kZywiec\Programowanie-Obiektowe\Lab_1\Lab_1\bin\Debug\net5.0\ref\Lab_1.dll
+C:\Users\Krystian\Source\Repos\kZywiec\Programowanie-Obiektowe\Lab_1\Lab_1\bin\Debug\net5.0\Lab_1.pdb
+C:\Users\Krystian\Source\Repos\kZywiec\Programowanie-Obiektowe\Lab_1\Lab_1\obj\Debug\net5.0\Lab_1.csproj.AssemblyReference.cache
+C:\Users\Krystian\Source\Repos\kZywiec\Programowanie-Obiektowe\Lab_1\Lab_1\obj\Debug\net5.0\Lab_1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Krystian\Source\Repos\kZywiec\Programowanie-Obiektowe\Lab_1\Lab_1\obj\Debug\net5.0\Lab_1.AssemblyInfoInputs.cache
+C:\Users\Krystian\Source\Repos\kZywiec\Programowanie-Obiektowe\Lab_1\Lab_1\obj\Debug\net5.0\Lab_1.AssemblyInfo.cs
+C:\Users\Krystian\Source\Repos\kZywiec\Programowanie-Obiektowe\Lab_1\Lab_1\obj\Debug\net5.0\Lab_1.csproj.CoreCompileInputs.cache
+C:\Users\Krystian\Source\Repos\kZywiec\Programowanie-Obiektowe\Lab_1\Lab_1\obj\Debug\net5.0\Lab_1.dll
+C:\Users\Krystian\Source\Repos\kZywiec\Programowanie-Obiektowe\Lab_1\Lab_1\obj\Debug\net5.0\ref\Lab_1.dll
+C:\Users\Krystian\Source\Repos\kZywiec\Programowanie-Obiektowe\Lab_1\Lab_1\obj\Debug\net5.0\Lab_1.pdb
+C:\Users\Krystian\Source\Repos\kZywiec\Programowanie-Obiektowe\Lab_1\Lab_1\obj\Debug\net5.0\Lab_1.genruntimeconfig.cache
