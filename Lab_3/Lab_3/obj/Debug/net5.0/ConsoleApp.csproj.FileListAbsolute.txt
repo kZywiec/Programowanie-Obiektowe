@@ -1,0 +1,15 @@
+C:\Users\Krystian\source\repos\kZywiec\Programowanie-Obiektowe\Lab_3\Lab_3\bin\Debug\net5.0\ConsoleApp.exe
+C:\Users\Krystian\source\repos\kZywiec\Programowanie-Obiektowe\Lab_3\Lab_3\bin\Debug\net5.0\ConsoleApp.deps.json
+C:\Users\Krystian\source\repos\kZywiec\Programowanie-Obiektowe\Lab_3\Lab_3\bin\Debug\net5.0\ConsoleApp.runtimeconfig.json
+C:\Users\Krystian\source\repos\kZywiec\Programowanie-Obiektowe\Lab_3\Lab_3\bin\Debug\net5.0\ConsoleApp.runtimeconfig.dev.json
+C:\Users\Krystian\source\repos\kZywiec\Programowanie-Obiektowe\Lab_3\Lab_3\bin\Debug\net5.0\ConsoleApp.dll
+C:\Users\Krystian\source\repos\kZywiec\Programowanie-Obiektowe\Lab_3\Lab_3\bin\Debug\net5.0\ref\ConsoleApp.dll
+C:\Users\Krystian\source\repos\kZywiec\Programowanie-Obiektowe\Lab_3\Lab_3\bin\Debug\net5.0\ConsoleApp.pdb
+C:\Users\Krystian\source\repos\kZywiec\Programowanie-Obiektowe\Lab_3\Lab_3\obj\Debug\net5.0\ConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Krystian\source\repos\kZywiec\Programowanie-Obiektowe\Lab_3\Lab_3\obj\Debug\net5.0\ConsoleApp.AssemblyInfoInputs.cache
+C:\Users\Krystian\source\repos\kZywiec\Programowanie-Obiektowe\Lab_3\Lab_3\obj\Debug\net5.0\ConsoleApp.AssemblyInfo.cs
+C:\Users\Krystian\source\repos\kZywiec\Programowanie-Obiektowe\Lab_3\Lab_3\obj\Debug\net5.0\ConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\Krystian\source\repos\kZywiec\Programowanie-Obiektowe\Lab_3\Lab_3\obj\Debug\net5.0\ConsoleApp.dll
+C:\Users\Krystian\source\repos\kZywiec\Programowanie-Obiektowe\Lab_3\Lab_3\obj\Debug\net5.0\ref\ConsoleApp.dll
+C:\Users\Krystian\source\repos\kZywiec\Programowanie-Obiektowe\Lab_3\Lab_3\obj\Debug\net5.0\ConsoleApp.pdb
+C:\Users\Krystian\source\repos\kZywiec\Programowanie-Obiektowe\Lab_3\Lab_3\obj\Debug\net5.0\ConsoleApp.genruntimeconfig.cache
