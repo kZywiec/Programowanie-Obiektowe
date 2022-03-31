@@ -1,13 +1,12 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 using System.Net.Sockets;
-using System;
 
 namespace ConsoleApp.Logger
 {
     public class ClientSocket : IDisposable
     {
         private bool disposed;
-
         private Socket socket;
 
         public ClientSocket(string host, int port)

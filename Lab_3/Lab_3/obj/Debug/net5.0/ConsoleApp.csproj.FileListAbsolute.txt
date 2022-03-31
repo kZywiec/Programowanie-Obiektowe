@@ -13,3 +13,4 @@ C:\Users\Krystian\source\repos\kZywiec\Programowanie-Obiektowe\Lab_3\Lab_3\obj\D
 C:\Users\Krystian\source\repos\kZywiec\Programowanie-Obiektowe\Lab_3\Lab_3\obj\Debug\net5.0\ref\ConsoleApp.dll
 C:\Users\Krystian\source\repos\kZywiec\Programowanie-Obiektowe\Lab_3\Lab_3\obj\Debug\net5.0\ConsoleApp.pdb
 C:\Users\Krystian\source\repos\kZywiec\Programowanie-Obiektowe\Lab_3\Lab_3\obj\Debug\net5.0\ConsoleApp.genruntimeconfig.cache
+C:\Users\Krystian\Source\Repos\kZywiec\Programowanie-Obiektowe\Lab_3\Lab_3\obj\Debug\net5.0\ConsoleApp.csproj.AssemblyReference.cache

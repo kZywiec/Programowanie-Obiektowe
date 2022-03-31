@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "zadanie-ILogger",
+      "appliesTo": "Lab_3/Lab_3/Logger/ILogger.cs",
+      "type": "launch"
+    }
+  ]
+}
