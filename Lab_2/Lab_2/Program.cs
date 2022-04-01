@@ -38,7 +38,7 @@ namespace Lab_2
         }
     }
 
-    public class Person: IEquatable<Person>
+    public abstract class Person: IEquatable<Person>
     {
         private string name;
         private int age { get ; set; }

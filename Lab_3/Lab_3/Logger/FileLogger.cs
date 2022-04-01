@@ -11,12 +11,7 @@ namespace ConsoleApp.Logger
         public FileLogger() { }
         public FileLogger(string path)
         {
-            if (File.Exists(path))
-            {
-                File.Delete(path);
-            }
 
-            File.Create(path);
         }
             
 
