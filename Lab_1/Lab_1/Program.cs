@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 namespace Lab_1
 {
@@ -147,7 +147,8 @@ namespace Lab_1
 
         /// <param name="x"> Ułamek zwykły</param>
         /// <returns>Forma dzisiętna</returns>
-        public static decimal Dziesietny(Ulamek x) {
+        public static decimal Dziesietny(Ulamek x) 
+        {
             decimal a = x.Licznik;
             decimal b = x.Mianownik;
             return  a/b;
@@ -157,7 +158,8 @@ namespace Lab_1
 
         /// <param name="x">Ułamek zwykły</param>
         /// <returns>Liczba całkowita wynikająca z zaokrąglenia ułaka w góre</returns>
-        public static decimal ZaokronglonyWGore(Ulamek x) {
+        public static decimal ZaokronglonyWGore(Ulamek x) 
+        {
             decimal a = x.Licznik;
             decimal b = x.Mianownik;
             return Math.Round(a/b, MidpointRounding.ToPositiveInfinity);

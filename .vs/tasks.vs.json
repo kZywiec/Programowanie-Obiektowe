@@ -2,8 +2,8 @@
   "version": "0.2.1",
   "tasks": [
     {
-      "taskLabel": "zadanie-ILogger",
-      "appliesTo": "Lab_3/Lab_3/Logger/ILogger.cs",
+      "taskLabel": "zadanie-Lab_6",
+      "appliesTo": "Lab_6/Lab_6.sln",
       "type": "launch"
     }
   ]
