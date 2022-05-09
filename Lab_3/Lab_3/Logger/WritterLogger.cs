@@ -3,13 +3,13 @@ using System.IO;
 
 namespace ConsoleApp.Logger
 {
-    public abstract class WriterLogger : ILogger
+    abstract class WritterLogger : ILogger
     {
         protected TextWriter writer;
 
         public virtual void Log(params string[] messages)
         {
-            // Uzupełnić to miejsce o logikę zapisu opartą o TextWriter ...
+            writer.Write($"\n{DateTime.Now}: ");
         }
 
         public abstract void Dispose();

@@ -11,46 +11,25 @@ namespace ConsoleApp.Logger
 
         public ClientSocket(string host, int port)
         {
-            IPHostEntry entry = Dns.GetHostEntry(host);
-
+            disposed = true;
             this.socket = new Socket(SocketType.Stream, ProtocolType.Tcp);
-
-            try
-            {
-                this.socket.Connect(entry.AddressList, port);
-            }
-            catch (SocketException ex)
-            {
-                this.socket.Dispose();
-
-                throw ex;
-            }
+            socket.Connect(host,port);
         }
 
         ~ClientSocket()
-        {
-            this.Dispose(false);
-        }
+            => this.Dispose();
 
-        public int Send(byte[] buffer)
-        {
-            return this.socket.Send(buffer, SocketFlags.None);
-        }
+        public void Send(byte[] buffer)
+            => this.socket.Send(buffer, SocketFlags.None);
 
-        public int Send(byte[] buffer, int offset, int size)
-        {
-            return this.socket.Send(buffer, offset, size, SocketFlags.None);
-        }
+        public void Send(byte[] buffer, int offset, int size)
+            => this.socket.Send(buffer, offset, size, SocketFlags.None);
 
-        public int Receive(byte[] buffer)
-        {
-            return this.socket.Receive(buffer, SocketFlags.None);
-        }
+        public void Receive(byte[] buffer)
+            => this.socket.Receive(buffer, SocketFlags.None);
 
-        public int Receive(byte[] buffer, int offset, int size)
-        {
-            return this.socket.Receive(buffer, offset, size, SocketFlags.None);
-        }
+        public void Receive(byte[] buffer, int offset, int size)
+            => this.socket.Receive(buffer, offset, size, SocketFlags.None);
 
         public void Close()
         {
@@ -58,22 +37,13 @@ namespace ConsoleApp.Logger
             this.socket.Close();
         }
 
-        protected virtual void Dispose(bool disposing)
+        public void Dispose()
         {
             if (!this.disposed)
             {
-                if (disposing)
-                    this.socket.Dispose();
-
+                this.socket.Dispose();
                 this.disposed = true;
             }
-        }
-
-        public void Dispose()
-        {
-            this.Dispose(disposing: true);
-
-            GC.SuppressFinalize(this);
         }
     }
 }

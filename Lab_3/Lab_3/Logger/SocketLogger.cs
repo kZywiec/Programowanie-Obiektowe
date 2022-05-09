@@ -1,21 +1,24 @@
 ﻿using System;
-using System.IO;
+using System.Text;
 
 namespace ConsoleApp.Logger
 {
-    public class SocketLogger : ClientSocket
+    class SocketLogger : ILogger
     {
-        ClientSocket clientSocket { get; set; }
-
-        public SocketLogger() {}
+        ClientSocket clientSocket;
         public SocketLogger(string host, int port) 
-        { 
-            this.clientSocket =new ClientSocket( host, port);
-        }
+            => clientSocket = new ClientSocket(host, port);
+        ~SocketLogger() 
+            => Dispose();
 
-        public virtual void Log(params string[] messages)
+        public void Dispose() 
+            => clientSocket.Dispose();
+
+        public void Log(params string[] messages)
         {
-            // Uzupełnić to miejsce o logikę zapisu opartą o TextWriter ...
+            clientSocket.Send(Encoding.UTF8.GetBytes(($"\n{DateTime.Now} : ")));
+            for (int i = 0; i < messages.Length; i++)
+                clientSocket.Send(Encoding.UTF8.GetBytes($"{messages[i]} "));
         }
     }
 }

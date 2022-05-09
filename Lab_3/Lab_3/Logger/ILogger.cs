@@ -2,8 +2,8 @@
 
 namespace ConsoleApp.Logger
 {
-    public interface ILogger : IDisposable
+    interface ILogger : IDisposable
     {
-        void Log(params String[] messages);
+        void Log(params string[] messages);
     }
 }
