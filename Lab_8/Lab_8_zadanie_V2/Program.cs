@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Lab_8_zadanie
+namespace Lab_8_zadanie_v2
 {
     class Program
     {
