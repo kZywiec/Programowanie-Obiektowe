@@ -7,7 +7,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Initialized="Window_Initialized">
     <Grid>
-        <DataGrid HorizontalAlignment="Left" Height="238" Margin="156,96,0,0" VerticalAlignment="Top" Width="489"/>
-
+        <Button Content="Text" HorizontalAlignment="Left" Margin="40,20,0,0" VerticalAlignment="Top" Width="40
+                " Click="Button_Click" Height="20" BorderThickness="0" ClipToBounds="True"/>
+        <Button Content="Bash" HorizontalAlignment="Left" Margin="85,20,0,0" VerticalAlignment="Top" Width="40                 " Click="Button_Click" Height="20" BorderThickness="0" Background="#FF3ED57F"/>
+        <Button Content="C++" HorizontalAlignment="Left" Margin="130,20,0,0" VerticalAlignment="Top" Width="40                 " Click="Button_Click" Height="20" BorderThickness="0" ClipToBounds="True" Background="#FF095593" Foreground="White"/>
+        <Button Content="C#" HorizontalAlignment="Left" Margin="175,20,0,0" VerticalAlignment="Top" Width="40                 " Click="Button_Click" Height="20" BorderThickness="0" ClipToBounds="True" Background="#FF6F26AF" Foreground="White"/>
+        <Button Content="Java" HorizontalAlignment="Left" Margin="220,20,0,0" VerticalAlignment="Top" Width="40                 " Click="Button_Click" Height="20" BorderThickness="0" ClipToBounds="True" Background="#FF2B5483" Foreground="White"/>
+        <Button Content="CSS" HorizontalAlignment="Left" Margin="265,20,0,0" VerticalAlignment="Top" Width="40                 " Click="Button_Click" Height="20" BorderThickness="0" ClipToBounds="True" Background="#FF2162B1" Foreground="White"/>
+        <Button Content="HTML" HorizontalAlignment="Left" Margin="309,20,0,0" VerticalAlignment="Top" Width="40                 " Click="Button_Click" Height="20" BorderThickness="0" ClipToBounds="True" Background="#FFE15131" Foreground="White"/>
+        <Button Content="JavaScript" HorizontalAlignment="Left" Margin="354,20,0,0" VerticalAlignment="Top" Width="55" Click="Button_Click" Height="20" BorderThickness="0" ClipToBounds="True" Background="#FFF6DF49" Foreground="Black"/>
+        <Button Content="PHP" HorizontalAlignment="Left" Margin="414,20,0,0" VerticalAlignment="Top" Width="40                 " Click="Button_Click" Height="20" BorderThickness="0" ClipToBounds="True" Background="#FF9DA8D7"/>
+        <Button Content="Python" HorizontalAlignment="Left" Margin="459,20,0,0" VerticalAlignment="Top" Width="40                 " Click="Button_Click" Height="20" BorderThickness="0" ClipToBounds="True" Background="#FFF8DD42"/>
+        <Button Content="SQL" HorizontalAlignment="Left" Margin="504,20,0,0" VerticalAlignment="Top" Width="40                 " Click="Button_Click" Height="20" BorderThickness="0" ClipToBounds="True" Background="#FF3584D1" Foreground="#FFBCEC72"/>
     </Grid>
 </Window>

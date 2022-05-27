@@ -65,5 +65,15 @@ namespace Lab_9
 
 
         }
+
+        private void Button_Click()
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
