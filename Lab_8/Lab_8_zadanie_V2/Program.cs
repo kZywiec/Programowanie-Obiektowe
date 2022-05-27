@@ -21,7 +21,7 @@ namespace Lab_8_zadanie_v2
 
             Thread Timer = new(() =>
             {
-                Thread.Sleep(10000);
+                Thread.Sleep(1000);
                 TimeOut = true;
             });
              

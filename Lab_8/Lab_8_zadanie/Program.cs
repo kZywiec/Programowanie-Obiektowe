@@ -6,18 +6,20 @@ namespace Lab_8_zadanie
 {
     class Program
     {
+        static volatile bool TimeOut = false;
+
         static void Main(string[] args)
         {
             Object locker = new();
-            Dictionary< int, HashSet<int> > Set = new(); 
-            bool TimeOut = false;
-            int i = 1,Numarator = 0;
+            HashSet<int> Set = new(); 
+            
+            int i = 1;//,Numarator = 0;
 
-            Thread Timer = new(() =>
-            {
-                Thread.Sleep(10000);
-                TimeOut = true;
-            });
+           // Thread Timer = new(() =>
+           // {
+           //     Thread.Sleep(10000);
+          //      TimeOut = true;
+          //  });
 
             Thread First = new(() 
                 => { SearchForPrimaryWithJumpOfNumbers(0, 4); });
@@ -32,10 +34,16 @@ namespace Lab_8_zadanie
                 => {SearchForPrimaryWithJumpOfNumbers(3, 4);});
             
 
-            Timer.Start();
+          //  Timer.Start();
             StartSearchForPrimares();
 
-            Timer.Join();
+            Thread.Sleep(10000);
+            TimeOut = true;
+
+            stopSearchForPrimares();
+
+
+
             Console.WriteLine(Set.Count);
 
 
@@ -47,6 +55,14 @@ namespace Lab_8_zadanie
                 Forth.Start();
             }
 
+            void stopSearchForPrimares()
+            {
+                First.Join();
+                Second.Join();
+                Third.Join();
+                Forth.Join();
+            }
+
             void SearchForPrimaryWithJumpOfNumbers(int Jump, int NumberOfAllSerchers)
             {
                 int x = i + Jump;
@@ -55,8 +71,7 @@ namespace Lab_8_zadanie
                     if (isPrimeNumber(x))
                         lock (locker)
                         {
-                            ++Numarator;
-                            Set.Add(Numarator, new HashSet<int>(x));
+                            Set.Add(x);
                         }
                     x += NumberOfAllSerchers;
                 }
