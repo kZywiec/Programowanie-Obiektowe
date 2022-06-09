@@ -1,0 +1,88 @@
+﻿<Page x:Class="OrderApp.MainMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:OrderApp"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1080"
+      Title="MainMenu">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush>
+                <ImageBrush.ImageSource>
+                    Pictures/Main-background.png
+                </ImageBrush.ImageSource>
+            </ImageBrush>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="600"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="600" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Button Click="LogOut_Click" Grid.Column="0" BorderThickness="0" Background="#FFFFF3D9" >
+            <Image Source="Pictures\LogOut.png"/>
+        </Button>
+
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Background="Transparent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Click="NavigateFood_Appetizers_Click" Grid.Column="0" Style="{StaticResource FoodTypeCellButon}" >Antipasti</Button>
+                <Button Click="NavigateFood_Desserts_Click" Grid.Column="1" Style="{StaticResource FoodTypeCellButon}" >Dolci</Button>
+                <Button Click="NavigateFood_Cafe_Click" Grid.Column="2" Style="{StaticResource FoodTypeCellButon}" >Caffè</Button>
+            </Grid>
+            
+            <Frame x:Name="FoodMenuNavigator" Grid.Row="1" NavigationUIVisibility="Hidden" />
+        </Grid>
+
+
+        <Grid Grid.Row ="1" Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="62*" />
+                <RowDefinition Height="65*"/>
+                <RowDefinition Height="27*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Background="#F0CCB0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="314*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="223*" />
+                    <RowDefinition Height="30*"/>
+                </Grid.RowDefinitions>
+                <Border BorderBrush="#F0A160" BorderThickness="3" Grid.ColumnSpan="2"/>
+
+                <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                    <Border BorderBrush="#F0A160" BorderThickness="3" Margin="0,-3,0,0"/>
+                </Grid>
+            </Grid>
+
+            <Button Click="Order_Click" Style="{StaticResource ItemCellButon}" Background="#F0CCB0" BorderBrush="#B97D60" VerticalAlignment="Top" Content="Order" Grid.Row="1" Height="75" Width="250" Margin="0,13,0,0"/>
+            <Button Click="AddNewUser_Click" Style="{StaticResource ItemCellButon}" Background="#F0CCB0" BorderBrush="#B97D60" Content="Menage Users" Grid.Row="2" Height="75" Width="250"/>
+
+        </Grid>
+
+
+    </Grid>
+</Page>

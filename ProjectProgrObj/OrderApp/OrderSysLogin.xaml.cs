@@ -21,36 +21,38 @@ namespace OrderApp
     /// </summary>
     public partial class OrderSysLogin : Page
     {
-        private string LoginTemp = "";
+        private string PinTemp = "";
         public OrderSysLogin()
         {
             InitializeComponent();
         }
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            string connectionString = @"DESKTOP-V81EUI2\SQLPROGOBJ";
-            using (DataContext dataContext = new DataContext(connectionString)) ;
+
+            MainMenu mainMenuPage = new MainMenu();
+            this.NavigationService.Navigate(mainMenuPage);
         }
         private delegate bool LoginManipulationHolder();
-        private event LoginManipulationHolder ChangeLoginTemp;
+        private event LoginManipulationHolder ChangePinTemp;
 
         //Funkcja wywołuje event zmiany na zmiennej LoginTemp
         //sprawdzając czy użytkownik nie wprowadził zadużo znaków
-        protected virtual bool OnLoginTempChanged()
+        protected virtual bool OnPinTempChanged()
         {
-            if (ChangeLoginTemp != null) 
-                ChangeLoginTemp();   
-            else if(LoginTemp.Length > 4)
+            if (ChangePinTemp != null)
+                ChangePinTemp();   
+            else if(PinTemp.Length > 4)
                 return true;
             return false;
         }
-        //Wprowadzenie znaku do Tymczasowej zmiennej odpowiadającej za Login 
+        //Wprowadzenie znaku do Tymczasowej zmiennej odpowiadającej za Pin
+        //Wywołuje event 
         private void AddChar(char x)
         {
-            this.LoginTemp += x.ToString(); 
-            OnLoginTempChanged(); 
-            if (OnLoginTempChanged()) 
-                (this.LoginTemp, LengthCounter.Content) = ("" + x, "");
+            this.PinTemp += x.ToString();
+            OnPinTempChanged();
+            if (OnPinTempChanged())
+                (this.PinTemp, LengthCounter.Content) = ("" + x, "");
             LengthCounter.Content += "* "; //this.LoginTemp;
         }
         private void NumberButton0_Click(object sender, RoutedEventArgs e) => AddChar('0');

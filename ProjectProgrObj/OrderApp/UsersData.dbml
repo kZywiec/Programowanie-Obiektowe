@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FastFood_Sys" Class="UsersDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost\SQLPROGOBJ;Initial Catalog=FastFood_Sys;Integrated Security=True" SettingsObjectName="OrderApp.Properties.Settings" SettingsPropertyName="FastFood_SysConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="Users">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Pin" Type="System.String" DbType="NChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="Second_name" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="Role_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Pesel" Type="System.String" DbType="NChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone_number" Type="System.String" DbType="NChar(9) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

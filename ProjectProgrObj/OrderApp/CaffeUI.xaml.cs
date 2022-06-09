@@ -16,15 +16,13 @@ using System.Windows.Shapes;
 namespace OrderApp
 {
     /// <summary>
-    /// Logika interakcji dla klasy MainWindow.xaml
+    /// Logika interakcji dla klasy CaffeUI.xaml
     /// </summary>
-    public partial class MainWindow : NavigationWindow
+    public partial class CaffeUI : Page
     {
-        public MainWindow()
+        public CaffeUI()
         {
             InitializeComponent();
-            NavigationCommands.BrowseBack.InputGestures.Clear();
-            NavigationCommands.BrowseForward.InputGestures.Clear();
         }
     }
 }

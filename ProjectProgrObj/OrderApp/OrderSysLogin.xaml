@@ -11,9 +11,10 @@
 
     <Grid >
         <Grid.Background>
-            
             <ImageBrush>
-                <ImageBrush.ImageSource>Main-background.png</ImageBrush.ImageSource>
+                <ImageBrush.ImageSource>
+                    Pictures/Main-background.png
+                </ImageBrush.ImageSource>
             </ImageBrush>
         </Grid.Background>
         
@@ -24,7 +25,7 @@
         </Grid.RowDefinitions>
 
         <Image VerticalAlignment="Bottom" Height="100" >
-            <Image.Source >Logo.png</Image.Source>
+            <Image.Source >Pictures/Logo.png</Image.Source>
         </Image>
 
         <Label Name="LengthCounter" Height="50" HorizontalContentAlignment="Center" VerticalAlignment="Center" FontSize="35" Grid.Row="1" />

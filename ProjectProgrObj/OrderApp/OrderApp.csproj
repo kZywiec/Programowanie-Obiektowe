@@ -56,10 +56,50 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddNewUser.xaml.cs">
+      <DependentUpon>AddNewUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppetizersUI.xaml.cs">
+      <DependentUpon>AppetizersUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CaffeUI.xaml.cs">
+      <DependentUpon>CaffeUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DessertsUI.xaml.cs">
+      <DependentUpon>DessertsUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.xaml.cs">
+      <DependentUpon>MainMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="OrderSysLogin.xaml.cs">
       <DependentUpon>OrderSysLogin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UsersData.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsersData.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Workers.cs" />
+    <Page Include="AddNewUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppetizersUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CaffeUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DessertsUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -68,7 +108,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -100,6 +139,14 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="UsersData.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>UsersData.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UsersData.dbml.layout">
+      <DependentUpon>UsersData.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -108,10 +155,17 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Logo.png" />
+    <Resource Include="Pictures\Logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Main-background.png" />
+    <Resource Include="Pictures\Main-background.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\LogOut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\GoBack.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
