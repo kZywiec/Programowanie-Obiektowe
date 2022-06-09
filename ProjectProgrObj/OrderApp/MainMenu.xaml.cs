@@ -23,13 +23,16 @@ namespace OrderApp
         public MainMenu()
         {
             InitializeComponent();
+            User_Info.Text = $"Loged as {Authenticator.CurrentUser.Name}_{Authenticator.CurrentUser.Second_name}";
+            User_Info.Text += Authenticator.CurrentUser.Role_id == 1 ? $" (Admin)" : "";
+            MenageUsers_Button.Visibility = Authenticator.CurrentUser.Role_id == 1 ? Visibility.Visible : Visibility.Hidden;
         }
 
         private void LogOut_Click(object sender, RoutedEventArgs e)
         {
             OrderSysLogin orderSysLogin = new OrderSysLogin();
             this.NavigationService.Navigate(orderSysLogin);
-            //Loged = false;
+            Authenticator.Logout();
         }
         private void AddNewUser_Click(object sender, RoutedEventArgs e)
         {

@@ -29,8 +29,12 @@ namespace OrderApp
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
 
-            MainMenu mainMenuPage = new MainMenu();
-            this.NavigationService.Navigate(mainMenuPage);
+            if(Authenticator.Login(this.PinTemp))
+            {
+                MainMenu mainMenuPage = new MainMenu();
+                this.NavigationService.Navigate(mainMenuPage);
+            }
+            (this.PinTemp, LengthCounter.Content) = ("","");
         }
         private delegate bool LoginManipulationHolder();
         private event LoginManipulationHolder ChangePinTemp;

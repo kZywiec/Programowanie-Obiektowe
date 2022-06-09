@@ -34,7 +34,7 @@ namespace OrderApp
         {
             OrderSysLogin orderSysLogin = new OrderSysLogin();
             this.NavigationService.Navigate(orderSysLogin);
-            //Loged = false;
+            Authenticator.Logout();
         }
 
         private void GoBack_Click(object sender, RoutedEventArgs e)

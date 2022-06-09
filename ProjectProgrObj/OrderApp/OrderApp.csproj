@@ -62,15 +62,20 @@
     <Compile Include="AppetizersUI.xaml.cs">
       <DependentUpon>AppetizersUI.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Authenticator.cs" />
     <Compile Include="CaffeUI.xaml.cs">
       <DependentUpon>CaffeUI.xaml</DependentUpon>
     </Compile>
     <Compile Include="DessertsUI.xaml.cs">
       <DependentUpon>DessertsUI.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ExeptionPopUp.xaml.cs">
+      <DependentUpon>ExeptionPopUp.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="OrderList.cs" />
     <Compile Include="OrderSysLogin.xaml.cs">
       <DependentUpon>OrderSysLogin.xaml</DependentUpon>
     </Compile>
@@ -79,7 +84,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UsersData.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Workers.cs" />
     <Page Include="AddNewUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -93,6 +97,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DessertsUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExeptionPopUp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
