@@ -72,13 +72,24 @@
     <Compile Include="ExeptionPopUp.xaml.cs">
       <DependentUpon>ExeptionPopUp.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FoodItemsData.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FoodItemsData.dbml</DependentUpon>
+    </Compile>
     <Compile Include="MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="OrderList.cs" />
+    <Compile Include="OrdersData.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrdersData.dbml</DependentUpon>
+    </Compile>
     <Compile Include="OrderSysLogin.xaml.cs">
       <DependentUpon>OrderSysLogin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StoreItem.cs" />
     <Compile Include="UsersData.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -143,6 +154,22 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="FoodItemsData.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>FoodItemsData.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FoodItemsData.dbml.layout">
+      <DependentUpon>FoodItemsData.dbml</DependentUpon>
+    </None>
+    <None Include="OrdersData.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>OrdersData.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OrdersData.dbml.layout">
+      <DependentUpon>OrdersData.dbml</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

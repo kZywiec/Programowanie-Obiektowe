@@ -38,6 +38,7 @@ namespace OrderApp
         public static void Logout()
         {
             CurrentUser = null;
+            OrderList.ClearList();
         }
     }
 }

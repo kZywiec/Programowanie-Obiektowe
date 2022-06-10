@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FastFood_Sys" Class="FoodItemsDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost\SQLPROGOBJ;Initial Catalog=FastFood_Sys;Integrated Security=True" SettingsObjectName="OrderApp.Properties.Settings" SettingsPropertyName="FastFood_SysConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.FoodItems" Member="FoodItems">
+    <Type Name="FoodItems">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="SmallMoney NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

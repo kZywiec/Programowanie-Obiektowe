@@ -18,6 +18,7 @@ namespace OrderApp
     /// <summary>
     /// Logika interakcji dla klasy MainMenu.xaml
     /// </summary>
+
     public partial class MainMenu : Page
     {
         public MainMenu()
@@ -28,6 +29,10 @@ namespace OrderApp
             MenageUsers_Button.Visibility = Authenticator.CurrentUser.Role_id == 1 ? Visibility.Visible : Visibility.Hidden;
         }
 
+        public void MainMenuRefresh()
+        {
+            this.NavigationService.Refresh();
+        }
         private void LogOut_Click(object sender, RoutedEventArgs e)
         {
             OrderSysLogin orderSysLogin = new OrderSysLogin();
@@ -41,7 +46,8 @@ namespace OrderApp
         }
         private void Order_Click(object sender, RoutedEventArgs e)
         {
-           
+            OrderList.ConfirmOrder();
+           // MainMenuRefresh();
         }
         private void NavigateFood_Appetizers_Click(object sender, RoutedEventArgs e)
         {
@@ -49,7 +55,7 @@ namespace OrderApp
         }
         private void NavigateFood_Desserts_Click(object sender, RoutedEventArgs e)
         {
-
+            this.NavigationService.Refresh();
             FoodMenuNavigator.Content = new DessertsUI();
         }
         private void NavigateFood_Cafe_Click(object sender, RoutedEventArgs e)
@@ -58,3 +64,4 @@ namespace OrderApp
         }
     }
 }
+

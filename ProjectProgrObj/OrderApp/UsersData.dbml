@@ -9,6 +9,14 @@
       <Column Name="Role_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
       <Column Name="Pesel" Type="System.String" DbType="NChar(11) NOT NULL" CanBeNull="false" />
       <Column Name="Phone_number" Type="System.String" DbType="NChar(9) NOT NULL" CanBeNull="false" />
+      <Association Name="Users_Roles" Member="Roles" ThisKey="Role_id" OtherKey="Id" Type="Roles" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Roles" Member="Roles">
+    <Type Name="Roles">
+      <Column Name="Id" Type="System.Byte" DbType="TinyInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Association Name="Users_Roles" Member="Users" ThisKey="Id" OtherKey="Role_id" Type="Users" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

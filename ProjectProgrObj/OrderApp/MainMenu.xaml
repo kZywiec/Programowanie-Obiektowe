@@ -74,7 +74,18 @@
                 </Grid.RowDefinitions>
                 <Border BorderBrush="#F0A160" BorderThickness="3" Grid.ColumnSpan="2"/>
 
+                <ListView>
+                    <!--ItemsSource="{Binding Source={StaticResource OrderList.CurrentlyFoodItemsInOrder}}"-->
+                    <ListView.View>
+                        <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Employee Information">
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Header="Name" Width="200"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=Price}" Header="Price" Width="30"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
                 <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                    <Label Name="OrderSum" HorizontalAlignment="Right" Margin="0,0,10,0" Content="0.00 €"/>
                     <Border BorderBrush="#F0A160" BorderThickness="3" Margin="0,-3,0,0"/>
                 </Grid>
             </Grid>
@@ -83,7 +94,5 @@
             <Button x:Name="MenageUsers_Button" Click="AddNewUser_Click" Style="{StaticResource ItemCellButon}" Background="#F0CCB0" BorderBrush="#B97D60" Content="Menage Users" Grid.Row="2" Height="75" Width="250"/>
 
         </Grid>
-
-
     </Grid>
 </Page>

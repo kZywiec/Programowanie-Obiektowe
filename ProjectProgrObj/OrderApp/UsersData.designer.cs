@@ -33,6 +33,9 @@ namespace OrderApp
     partial void InsertUsers(Users instance);
     partial void UpdateUsers(Users instance);
     partial void DeleteUsers(Users instance);
+    partial void InsertRoles(Roles instance);
+    partial void UpdateRoles(Roles instance);
+    partial void DeleteRoles(Roles instance);
     #endregion
 		
 		public UsersDataDataContext() : 
@@ -72,6 +75,14 @@ namespace OrderApp
 				return this.GetTable<Users>();
 			}
 		}
+		
+		public System.Data.Linq.Table<Roles> Roles
+		{
+			get
+			{
+				return this.GetTable<Roles>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Users")]
@@ -91,8 +102,10 @@ namespace OrderApp
 		private byte _Role_id;
 		
 		private string _Pesel;
-
+		
 		private string _Phone_number;
+		
+		private EntitySet<Roles> _Roles;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -116,6 +129,7 @@ namespace OrderApp
 		
 		public Users()
 		{
+			this._Roles = new EntitySet<Roles>(new Action<Roles>(this.attach_Roles), new Action<Roles>(this.detach_Roles));
 			OnCreated();
 		}
 		
@@ -255,6 +269,158 @@ namespace OrderApp
 					this._Phone_number = value;
 					this.SendPropertyChanged("Phone_number");
 					this.OnPhone_numberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Users_Roles", Storage="_Roles", ThisKey="Role_id", OtherKey="Id")]
+		public EntitySet<Roles> Roles
+		{
+			get
+			{
+				return this._Roles;
+			}
+			set
+			{
+				this._Roles.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Roles(Roles entity)
+		{
+			this.SendPropertyChanging();
+			entity.Users = this;
+		}
+		
+		private void detach_Roles(Roles entity)
+		{
+			this.SendPropertyChanging();
+			entity.Users = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Roles")]
+	public partial class Roles : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private byte _Id;
+		
+		private string _Name;
+		
+		private EntityRef<Users> _Users;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(byte value);
+    partial void OnIdChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    #endregion
+		
+		public Roles()
+		{
+			this._Users = default(EntityRef<Users>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="TinyInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public byte Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					if (this._Users.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(25) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Users_Roles", Storage="_Users", ThisKey="Id", OtherKey="Role_id", IsForeignKey=true)]
+		public Users Users
+		{
+			get
+			{
+				return this._Users.Entity;
+			}
+			set
+			{
+				Users previousValue = this._Users.Entity;
+				if (((previousValue != value) 
+							|| (this._Users.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Users.Entity = null;
+						previousValue.Roles.Remove(this);
+					}
+					this._Users.Entity = value;
+					if ((value != null))
+					{
+						value.Roles.Add(this);
+						this._Id = value.Role_id;
+					}
+					else
+					{
+						this._Id = default(byte);
+					}
+					this.SendPropertyChanged("Users");
 				}
 			}
 		}

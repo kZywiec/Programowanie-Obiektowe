@@ -28,7 +28,6 @@ namespace OrderApp
         }
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-
             if(Authenticator.Login(this.PinTemp))
             {
                 MainMenu mainMenuPage = new MainMenu();
