@@ -1,0 +1,24 @@
+Id,Name,Price,Type
+3,Tiramisu,12,Dessert
+4,Panna cotta,9,Dessert
+5,Cornetti,4,5,Dessert
+6,Gelato,7,5,Dessert
+7,Cantuccini,5,Dessert
+8,Bisci Amaretto,10,Dessert
+9,Crostata,16,Dessert
+11,La Bomba,6,Dessert
+12,Nerra,5,Caffe
+13,Latte,12,Caffe
+14,Cappuccino,7,Caffe
+15,Ristretto,7,5,Caffe
+16,Espresso,6,Caffe
+17,Doppio,12,Caffe
+18,Cortado,7,5,Caffe
+20,Lungo,8,Caffe
+21,Pancetta,13,Appetizer
+22,Bruschetta,12,5,Appetizer
+23,Focaccia,15,Appetizer
+24,Panzeritti,17,Appetizer
+25,Pizza Bianca,20,Appetizer
+26,Insalata caprese,18,Appetizer
+27,Porchetta,26,Appetizer
