@@ -5,6 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OrderApp"
         mc:Ignorable="d" 
-        Title="MainWindow" WindowStartupLocation="CenterScreen" MinHeight="720" MinWidth="1080" MaxHeight="720" MaxWidth="1080" Source="OrderSysLogin.xaml" ShowsNavigationUI="False">
+        Title="OrderSys" WindowStartupLocation="CenterScreen" MinHeight="720" MinWidth="1080" MaxHeight="720" MaxWidth="1080" Source="OrderSysLogin.xaml" ShowsNavigationUI="False" Icon="Pictures/icon.ico">
         
 </NavigationWindow>

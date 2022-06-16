@@ -20,26 +20,33 @@ namespace OrderApp
     /// </summary>
     public partial class DessertsUI : Page
     {
-        public DessertsUI()
+        MainMenu parent { get; set; }
+        public DessertsUI(MainMenu Parent)
         {
             InitializeComponent();
+            parent = Parent;
         }
-
         private void Bt1_Click(object sender, RoutedEventArgs e)
-            => OrderList.Add(Bt1.Content.ToString());
+            => AddItem(parent, Bt1.Content.ToString());
         private void Bt2_Click(object sender, RoutedEventArgs e)
-            => OrderList.Add(Bt2.Content.ToString());
+            => AddItem(parent, Bt2.Content.ToString());
         private void Bt3_Click(object sender, RoutedEventArgs e)
-            => OrderList.Add(Bt3.Content.ToString());
+            => AddItem(parent, Bt3.Content.ToString());
         private void Bt4_Click(object sender, RoutedEventArgs e)
-            => OrderList.Add(Bt4.Content.ToString());
+            => AddItem(parent, Bt4.Content.ToString());
         private void Bt5_Click(object sender, RoutedEventArgs e)
-            => OrderList.Add(Bt5.Content.ToString());
+            => AddItem(parent, Bt5.Content.ToString());
         private void Bt6_Click(object sender, RoutedEventArgs e)
-            => OrderList.Add(Bt6.Content.ToString());
+            => AddItem(parent, Bt6.Content.ToString());
         private void Bt7_Click(object sender, RoutedEventArgs e)
-            => OrderList.Add(Bt7.Content.ToString());
+            => AddItem(parent, Bt7.Content.ToString());
         private void Bt8_Click(object sender, RoutedEventArgs e)
-            => OrderList.Add(Bt8.Content.ToString());
+            => AddItem(parent, Bt8.Content.ToString());
+
+        private void AddItem(MainMenu Parent, string content)
+        {
+            Parent._orderList.Add(content);
+            Parent.Refresh();
+        }
     }
 }

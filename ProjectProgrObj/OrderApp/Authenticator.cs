@@ -43,12 +43,10 @@ namespace OrderApp
         }
         /// <summary>
         /// sets the current user to null
-        /// canceling of current order
         /// </summary>
         public static void Logout()
         {
             CurrentUser = null;
-            OrderList.ClearList();
         }
     }
 }

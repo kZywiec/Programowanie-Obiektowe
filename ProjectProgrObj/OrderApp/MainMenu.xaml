@@ -51,16 +51,17 @@
                 <Button Click="NavigateFood_Desserts_Click" Grid.Column="1" Style="{StaticResource FoodTypeCellButon}" >Dolci</Button>
                 <Button Click="NavigateFood_Cafe_Click" Grid.Column="2" Style="{StaticResource FoodTypeCellButon}" >Caffè</Button>
             </Grid>
-            
+
             <Frame x:Name="FoodMenuNavigator" Grid.Row="1" NavigationUIVisibility="Hidden" />
         </Grid>
 
 
         <Grid Grid.Row ="1" Grid.Column="3">
             <Grid.RowDefinitions>
-                <RowDefinition Height="62*" />
-                <RowDefinition Height="65*"/>
-                <RowDefinition Height="27*"/>
+                <RowDefinition Height="121*" />
+                <RowDefinition Height="93*"/>
+                <RowDefinition Height="86*"/>
+                <RowDefinition Height="0*"/>
             </Grid.RowDefinitions>
 
             <Grid Background="#F0CCB0">
@@ -74,24 +75,32 @@
                 </Grid.RowDefinitions>
                 <Border BorderBrush="#F0A160" BorderThickness="3" Grid.ColumnSpan="2"/>
 
-                <ListView>
-                    <!--ItemsSource="{Binding Source={StaticResource OrderList.CurrentlyFoodItemsInOrder}}"-->
+                <ListView Name ="OrderListView">
                     <ListView.View>
-                        <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Employee Information">
+                        <GridView AllowsColumnReorder="true" >
                             <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Header="Name" Width="200"/>
-                            <GridViewColumn DisplayMemberBinding="{Binding Path=Price}" Header="Price" Width="30"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=Price}" Header="Price" Width="40"/>
                         </GridView>
                     </ListView.View>
                 </ListView>
 
                 <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                    <Button Style="{StaticResource ItemCellButon}" Width="100" Background="Red" Content="Delete" HorizontalAlignment="Left" FontSize="15" Click="Delete_Click" />
                     <Label Name="OrderSum" HorizontalAlignment="Right" Margin="0,0,10,0" Content="0.00 €"/>
                     <Border BorderBrush="#F0A160" BorderThickness="3" Margin="0,-3,0,0"/>
                 </Grid>
             </Grid>
 
-            <Button Click="Order_Click" Style="{StaticResource ItemCellButon}" Background="#F0CCB0" BorderBrush="#B97D60" VerticalAlignment="Top" Content="Order" Grid.Row="1" Height="75" Width="250" Margin="0,13,0,0"/>
-            <Button x:Name="MenageUsers_Button" Click="AddNewUser_Click" Style="{StaticResource ItemCellButon}" Background="#F0CCB0" BorderBrush="#B97D60" Content="Menage Users" Grid.Row="2" Height="75" Width="250"/>
+            <Button Click="Order_Click" Style="{StaticResource ItemCellButon}" Background="#F0CCB0" BorderBrush="#B97D60" VerticalAlignment="Top" Content="Order" Grid.Row="1" Height="75" Margin="12,13,12,0"/>
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Button x:Name="MenageUsers_Button" Click="MenageUsers_Click" Style="{StaticResource ItemCellButon}" Background="#F0CCB0" BorderBrush="#B97D60" Content="Menage Users" Grid.Row="0" Height="75" Width="250"/>
+                <Button x:Name="MenageOrders_Button" Click="MenageOrders_Click" Style="{StaticResource ItemCellButon}" Background="#F0CCB0" BorderBrush="#B97D60" Content="Menage Orders" Grid.Row="1" Height="75" Width="250"/>
+            </Grid>
 
         </Grid>
     </Grid>

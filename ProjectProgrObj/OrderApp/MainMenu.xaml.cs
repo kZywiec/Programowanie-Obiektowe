@@ -21,47 +21,67 @@ namespace OrderApp
 
     public partial class MainMenu : Page
     {
+        public OrderList _orderList { get; set; }
         public MainMenu()
         {
             InitializeComponent();
+            _orderList = new OrderList();
             User_Info.Text = $"Loged as {Authenticator.CurrentUser.Name}_{Authenticator.CurrentUser.Second_name}";
             User_Info.Text += Authenticator.CurrentUser.Role_id == 1 ? $" (Admin)" : "";
             MenageUsers_Button.Visibility = Authenticator.CurrentUser.Role_id == 1 ? Visibility.Visible : Visibility.Hidden;
+            MenageOrders_Button.Visibility = Authenticator.CurrentUser.Role_id == 1 ? Visibility.Visible : Visibility.Hidden;
+            OrderListView.ItemsSource = _orderList.CurrentlyFoodItemsInOrder;
         }
 
         //refresh of current page
-        public void MainMenuRefresh()
+        public void Refresh()
         {
             this.NavigationService.Refresh();
+            OrderSum.Content = _orderList.PriceSum();
+            OrderListView.Items.Refresh();
         }
+
         private void LogOut_Click(object sender, RoutedEventArgs e)
         {
             OrderSysLogin orderSysLogin = new OrderSysLogin();
             this.NavigationService.Navigate(orderSysLogin);
+            this._orderList.ClearList();
             Authenticator.Logout();
         }
-        private void AddNewUser_Click(object sender, RoutedEventArgs e)
+
+        private void MenageUsers_Click(object sender, RoutedEventArgs e)
         {
-            AddNewUser addNewUser = new AddNewUser();
-            this.NavigationService.Navigate(addNewUser);
+            this.NavigationService.Navigate(new AddNewUser());
+        }
+        private void MenageOrders_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new MenageOrders());
         }
         private void Order_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.ConfirmOrder();
-           // MainMenuRefresh();
+            _orderList.ConfirmOrder();
+            Refresh();
         }
         private void NavigateFood_Appetizers_Click(object sender, RoutedEventArgs e)
         {
-            FoodMenuNavigator.Content = new AppetizersUI();
+            FoodMenuNavigator.Content = new AppetizersUI(this);
         }
         private void NavigateFood_Desserts_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Refresh();
-            FoodMenuNavigator.Content = new DessertsUI();
+            FoodMenuNavigator.Content = new DessertsUI(this);
         }
         private void NavigateFood_Cafe_Click(object sender, RoutedEventArgs e)
         {
-            FoodMenuNavigator.Content = new CaffeUI();
+            FoodMenuNavigator.Content = new CaffeUI(this);
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            if (OrderListView.SelectedItem == null) return;
+            FoodItems ToDelete = (FoodItems)OrderListView.SelectedItem;
+            _orderList.Remove(ToDelete);
+            this.Refresh();
         }
     }
 }

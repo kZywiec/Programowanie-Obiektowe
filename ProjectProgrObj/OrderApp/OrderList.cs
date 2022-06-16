@@ -8,43 +8,47 @@ namespace OrderApp
 {
     public class OrderList
     {
-        static FoodItemsDataDataContext dcFI = new FoodItemsDataDataContext(
+        private static FoodItemsDataDataContext dcFI = new FoodItemsDataDataContext(
         Properties.Settings.Default.FastFood_SysConnectionString);
 
-        static OrdersDataDataContext dcO = new OrdersDataDataContext(
+        private static OrdersDataDataContext dcO = new OrdersDataDataContext(
         Properties.Settings.Default.FastFood_SysConnectionString);
 
         /// <summary>
         /// List of products in the currnet order
         /// </summary>
-        public static List<FoodItems> CurrentlyFoodItemsInOrder = new List<FoodItems>();
-        private static int _number = dcO.Orders.Any() ? dcO.Orders.Max(e => e.Number) + 1 : 1;
+        public List<FoodItems> CurrentlyFoodItemsInOrder = new List<FoodItems>();
+        private int _number = dcO.Orders.Any() ? dcO.Orders.Max(e => e.Number) + 1 : 1;
 
         /// <summary>
         /// Finds the product with same name as that on button and ads it to the list
         /// </summary>
         /// <param name="_name"></param>
-        public static void Add(string _name)
+        public void Add(string _name)
         {
             FoodItems x = dcFI.FoodItems.FirstOrDefault(e => e.Name.Equals(_name));
             CurrentlyFoodItemsInOrder.Add(x);
         }
-        public static void Remove(string _name)
-            => CurrentlyFoodItemsInOrder.Remove(new FoodItems { Name = _name });
+        /// <summary>
+        /// Removes the product from the list with same name as a Source 
+        /// </summary>
+        /// <param name="_name"></param>
+        public void Remove(FoodItems item)
+            => CurrentlyFoodItemsInOrder.Remove(item);
         /// <summary>
         /// Make a sum of all items in list (To write it on info for user)
         /// </summary>
-        public static string PriceSum()
+        public string PriceSum()
         {
             decimal resoult = 0;
             foreach(FoodItems item in CurrentlyFoodItemsInOrder)
                 resoult += item.Price;
-            return resoult.ToString() +" €";
+            return resoult.ToString("0.00") +" €";
         }
         /// <summary>
         /// Taking all items from list and adding them to the DB witch the currently number of order
         /// </summary>
-        public static void ConfirmOrder()
+        public void ConfirmOrder()
         {
             
             foreach (var item in CurrentlyFoodItemsInOrder)
@@ -62,7 +66,11 @@ namespace OrderApp
             //Clear view
         }
 
-        public static void ClearList() 
+        /// <summary>
+        /// clearing the list
+        /// </summary>
+        public void ClearList() 
             => CurrentlyFoodItemsInOrder.Clear();
+
     }
 }
