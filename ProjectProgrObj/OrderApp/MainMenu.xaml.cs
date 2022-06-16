@@ -29,6 +29,7 @@ namespace OrderApp
             MenageUsers_Button.Visibility = Authenticator.CurrentUser.Role_id == 1 ? Visibility.Visible : Visibility.Hidden;
         }
 
+        //refresh of current page
         public void MainMenuRefresh()
         {
             this.NavigationService.Refresh();

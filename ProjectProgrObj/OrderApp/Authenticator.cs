@@ -11,10 +11,16 @@ namespace OrderApp
 {
     class Authenticator
     {
-
+        /// <summary>
+        /// Object of user who is actually logedin
+        /// </summary>
         public static Users CurrentUser { get; private set; }
 
         bool IsLoggedIn => CurrentUser != null;
+
+        /// <summary>
+        /// Searching for user with same Pin as that typed in login section
+        /// </summary>
 
         public static bool Login(string _Pin)
         {
@@ -35,6 +41,10 @@ namespace OrderApp
             }
             return true;
         }
+        /// <summary>
+        /// sets the current user to null
+        /// canceling of current order
+        /// </summary>
         public static void Logout()
         {
             CurrentUser = null;

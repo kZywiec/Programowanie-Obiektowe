@@ -27,7 +27,6 @@ namespace OrderApp
         {
             InitializeComponent();
             if (dc.DatabaseExists()) UsersDataGrid.ItemsSource = dc.Users;
-
         }
 
         private void LogOut_Click(object sender, RoutedEventArgs e)

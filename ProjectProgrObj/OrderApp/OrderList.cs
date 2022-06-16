@@ -14,10 +14,16 @@ namespace OrderApp
         static OrdersDataDataContext dcO = new OrdersDataDataContext(
         Properties.Settings.Default.FastFood_SysConnectionString);
 
+        /// <summary>
+        /// List of products in the currnet order
+        /// </summary>
         public static List<FoodItems> CurrentlyFoodItemsInOrder = new List<FoodItems>();
         private static int _number = dcO.Orders.Any() ? dcO.Orders.Max(e => e.Number) + 1 : 1;
 
-
+        /// <summary>
+        /// Finds the product with same name as that on button and ads it to the list
+        /// </summary>
+        /// <param name="_name"></param>
         public static void Add(string _name)
         {
             FoodItems x = dcFI.FoodItems.FirstOrDefault(e => e.Name.Equals(_name));
@@ -25,7 +31,9 @@ namespace OrderApp
         }
         public static void Remove(string _name)
             => CurrentlyFoodItemsInOrder.Remove(new FoodItems { Name = _name });
-
+        /// <summary>
+        /// Make a sum of all items in list (To write it on info for user)
+        /// </summary>
         public static string PriceSum()
         {
             decimal resoult = 0;
@@ -33,7 +41,9 @@ namespace OrderApp
                 resoult += item.Price;
             return resoult.ToString() +" €";
         }
-
+        /// <summary>
+        /// Taking all items from list and adding them to the DB witch the currently number of order
+        /// </summary>
         public static void ConfirmOrder()
         {
             
